@@ -63,11 +63,12 @@ public class EartMovement : MonoBehaviour {
         {
             if(!jumping)
             {
-                Destroy(this.gameObject);
+                Destroy(gameObject);
             }
             else
             {
                 Destroy(collision.gameObject);
+                GameObject.Find("BlackHole").GetComponent<GameHandler>().Score += 10;
             }
         }
     }

@@ -1,25 +1,29 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameHandler : MonoBehaviour {
 
     public GameObject spacerock;
     public GameObject powerup;
-
     public GameObject furthest;
+
+    public float Score;
 
     public List<GameObject> powerups;
 
 	// Use this for initialization
 	void Start ()
     {
-        powerups = new List<GameObject>();
-        powerups.Add(Instantiate(powerup, new Vector3(0, 0, 5), Quaternion.identity));
-        powerups.Add(Instantiate(powerup, new Vector3(0, 0, 6), Quaternion.identity));
-        powerups.Add(Instantiate(powerup, new Vector3(0, 0, 7), Quaternion.identity));
-        powerups.Add(Instantiate(powerup, new Vector3(0, 0, 8), Quaternion.identity));
-        powerups.Add(furthest = Instantiate(powerup, new Vector3(0, 0, 9), Quaternion.identity));
+        powerups = new List<GameObject>
+        {
+            Instantiate(powerup, new Vector3(0, 0, 5), Quaternion.identity),
+            Instantiate(powerup, new Vector3(0, 0, 6), Quaternion.identity),
+            Instantiate(powerup, new Vector3(0, 0, 7), Quaternion.identity),
+            Instantiate(powerup, new Vector3(0, 0, 8), Quaternion.identity),
+            (furthest = Instantiate(powerup, new Vector3(0, 0, 9), Quaternion.identity))
+        };
     }
 
     public void SpawnPowerup()
@@ -34,6 +38,11 @@ public class GameHandler : MonoBehaviour {
         {
             Instantiate(spacerock);
         }
+
+        Score += Time.deltaTime;
+
+        FindObjectOfType<Text>().text = "Score: " + Score.ToString("0.00");
+        
     }
 
     private void OnCollisionEnter(Collision collision)

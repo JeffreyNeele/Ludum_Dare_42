@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class Buttons : MonoBehaviour {
 
+    public int sceneIndex;
 	// Use this for initialization
 	void Start () {
 		
@@ -17,7 +18,7 @@ public class Buttons : MonoBehaviour {
 
     public void ChangeScene()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(sceneIndex);
     }
 
     public void ExitGame()

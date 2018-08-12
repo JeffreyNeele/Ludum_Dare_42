@@ -8,6 +8,7 @@ public class GameHandler : MonoBehaviour {
     public GameObject spacerock;
     public GameObject powerup;
     public GameObject furthest;
+    public GameObject PlayerObject;
 
     public float Score;
 
@@ -38,7 +39,7 @@ public class GameHandler : MonoBehaviour {
         {
             Instantiate(spacerock);
         }
-        if (GameObject.Find("EarthChan"))
+        if (PlayerObject.GetComponent<StartUp_Game>().Player)
         {
             Score += Time.deltaTime;
         }

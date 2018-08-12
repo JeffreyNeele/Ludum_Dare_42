@@ -16,6 +16,8 @@ public class StartUp : MonoBehaviour {
         PlayerPrefs.SetInt("OwnSun", 1);
         PlayerPrefs.SetInt("OwnMars", 1);
 
+        DontDestroyOnLoad(GameObject.Find("Moosic"));
+
         transform.GetChild(index).gameObject.SetActive(true);
 	}
 	

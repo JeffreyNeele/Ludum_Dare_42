@@ -50,8 +50,10 @@ public class EartMovement : MonoBehaviour {
             {
                 transform.RotateAround(target.position, Vector3.up, speed * 100 * Time.deltaTime);
             }
-
-            transform.Rotate(new Vector3(1, 1, 0), step * 100f);
+            if (gameObject.name != "Sun")
+            {
+                transform.Rotate(new Vector3(1, 1, 0), step * 100f);
+            }
         }
         else
         {

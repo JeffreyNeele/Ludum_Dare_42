@@ -13,9 +13,9 @@ public class SpaceRock : MonoBehaviour {
         transform.position = new Vector3(10f, 0, 0);
         transform.RotateAround(Vector3.zero, Vector3.up, Random.Range(0f, 360f));
 	}
-	
-	// Update is called once per frame
-	void Update ()
+
+    // Update is called once per frame
+    void Update()
     {
         if (transform.position == Vector3.zero)
         {

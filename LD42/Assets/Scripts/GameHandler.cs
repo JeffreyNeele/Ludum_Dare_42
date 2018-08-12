@@ -38,9 +38,10 @@ public class GameHandler : MonoBehaviour {
         {
             Instantiate(spacerock);
         }
-
-        Score += Time.deltaTime;
-
+        if (GameObject.Find("EarthChan"))
+        {
+            Score += Time.deltaTime;
+        }
         FindObjectOfType<Text>().text = "Score: " + Score.ToString("0.00");
         
     }

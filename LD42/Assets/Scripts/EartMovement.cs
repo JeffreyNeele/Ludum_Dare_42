@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class EartMovement : MonoBehaviour {
 
@@ -10,6 +11,7 @@ public class EartMovement : MonoBehaviour {
     private bool jumping;
     public bool alive;
     private int multikill;
+    public Button againButton, exitButton;
 
 	// Use this for initialization
 	void Start ()
@@ -50,8 +52,10 @@ public class EartMovement : MonoBehaviour {
             {
                 transform.RotateAround(target.position, Vector3.up, speed * 100 * Time.deltaTime);
             }
-
-            transform.Rotate(new Vector3(1, 1, 0), step * 100f);
+            if (gameObject.name != "Sun")
+            {
+                transform.Rotate(new Vector3(1, 1, 0), step * 100f);
+            }
         }
         else
         {
@@ -76,6 +80,8 @@ public class EartMovement : MonoBehaviour {
             {
                 Destroy(gameObject);
                 alive = false;
+                againButton.gameObject.SetActive(true);
+                exitButton.gameObject.SetActive(true);
             }
             else
             {

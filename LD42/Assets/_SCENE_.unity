@@ -470,6 +470,16 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114874293934883946, guid: 1ed73af4add52c447b465db2c7257e1a,
+        type: 2}
+      propertyPath: Rocks.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 114874293934883946, guid: 1ed73af4add52c447b465db2c7257e1a,
+        type: 2}
+      propertyPath: PlanetMaterials.Array.size
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4848051451946444, guid: 1ed73af4add52c447b465db2c7257e1a, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -507,6 +517,53 @@ Prefab:
       propertyPath: PlayerObject
       value: 
       objectReference: {fileID: 1730403523}
+    - target: {fileID: 114874293934883946, guid: 1ed73af4add52c447b465db2c7257e1a,
+        type: 2}
+      propertyPath: Rocks.Array.data[0]
+      value: 
+      objectReference: {fileID: 100000, guid: ebbd7c50695dcc74a814ac43f769bf45, type: 3}
+    - target: {fileID: 114874293934883946, guid: 1ed73af4add52c447b465db2c7257e1a,
+        type: 2}
+      propertyPath: Rocks.Array.data[1]
+      value: 
+      objectReference: {fileID: 100000, guid: 19858f397f21304489ce4db4f248a022, type: 3}
+    - target: {fileID: 114874293934883946, guid: 1ed73af4add52c447b465db2c7257e1a,
+        type: 2}
+      propertyPath: Rocks.Array.data[2]
+      value: 
+      objectReference: {fileID: 100000, guid: 63c6314be15db7f4ebc737eef5405602, type: 3}
+    - target: {fileID: 114874293934883946, guid: 1ed73af4add52c447b465db2c7257e1a,
+        type: 2}
+      propertyPath: Rocks.Array.data[3]
+      value: 
+      objectReference: {fileID: 100000, guid: a8d3bd538ca673d4d9f8d4f4615793ab, type: 3}
+    - target: {fileID: 114874293934883946, guid: 1ed73af4add52c447b465db2c7257e1a,
+        type: 2}
+      propertyPath: PlanetMaterials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 03f5b3162d16aae46875fd140ef9a4a9, type: 2}
+    - target: {fileID: 114874293934883946, guid: 1ed73af4add52c447b465db2c7257e1a,
+        type: 2}
+      propertyPath: PlanetMaterials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: f52d875bd9c79db48afcbf8c63558045, type: 2}
+    - target: {fileID: 114874293934883946, guid: 1ed73af4add52c447b465db2c7257e1a,
+        type: 2}
+      propertyPath: PlanetMaterials.Array.data[2]
+      value: 
+      objectReference: {fileID: 2100000, guid: d7a675fecfcff5a42b168937640cb73a, type: 2}
+    - target: {fileID: 114874293934883946, guid: 1ed73af4add52c447b465db2c7257e1a,
+        type: 2}
+      propertyPath: PlanetRock
+      value: 
+      objectReference: {fileID: 1496186648571426, guid: 62a3cbb955e65fc4aa516a60136020b5,
+        type: 2}
+    - target: {fileID: 114874293934883946, guid: 1ed73af4add52c447b465db2c7257e1a,
+        type: 2}
+      propertyPath: bigmomma
+      value: 
+      objectReference: {fileID: 1283635501139544, guid: 2c5374775afac564c941d9dcc2df8172,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1ed73af4add52c447b465db2c7257e1a, type: 2}
   m_IsPrefabParent: 0
@@ -1168,7 +1225,7 @@ ParticleSystem:
   moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 2088971175
+  randomSeed: -1894269731
   InitialModule:
     serializedVersion: 3
     enabled: 1

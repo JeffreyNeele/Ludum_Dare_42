@@ -43,12 +43,12 @@ public class EartMovement : MonoBehaviour {
 
             if (Input.GetKey(KeyCode.A))
             {
-                transform.RotateAround(target.position, Vector3.up, -speed * 100 * Time.deltaTime);
+                transform.RotateAround(target.position, Vector3.up, -speed * (Input.GetKey(KeyCode.LeftShift) ? 50 : 100) * Time.deltaTime);
             }
 
             if (Input.GetKey(KeyCode.D))
             {
-                transform.RotateAround(target.position, Vector3.up, speed * 100 * Time.deltaTime);
+                transform.RotateAround(target.position, Vector3.up, speed * (Input.GetKey(KeyCode.LeftShift) ? 50 : 100) * Time.deltaTime);
             }
             if (gameObject.name != "Sun")
             {
@@ -71,8 +71,8 @@ public class EartMovement : MonoBehaviour {
             GameObject.Find("BlackHole").GetComponent<GameHandler>().SpawnPowerup();
             jumping = true;
         }
-        
-        else if(collision.gameObject.name == "SpaceRock(Clone)")
+
+        else if (collision.gameObject.name.Contains("Rock"))
         {
             if(!jumping)
             {

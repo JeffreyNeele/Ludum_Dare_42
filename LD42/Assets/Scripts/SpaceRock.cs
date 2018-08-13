@@ -26,6 +26,11 @@ public class SpaceRock : MonoBehaviour {
         float step = speed * Time.deltaTime;
 
         transform.position = Vector3.MoveTowards(position, Vector3.zero, step * 0.2f);
+
+        if (gameObject.name != "MommaPPlanetRock(Clone)" || gameObject.name != "TestRock")
+        {
+            transform.Rotate(new Vector3(Random.Range(0f, 1f), Random.Range(0f, 1f), Random.Range(0f, 1f)).normalized, step * 20f);
+        }
         transform.RotateAround(Vector3.zero, Vector3.up, 0.1f);
     }
 }

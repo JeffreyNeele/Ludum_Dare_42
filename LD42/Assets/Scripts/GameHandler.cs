@@ -64,7 +64,7 @@ public class GameHandler : MonoBehaviour {
         Duration += Time.deltaTime;
         if (Random.value < 0.05)
         {
-            if (Random.value < System.Math.Sqrt(Duration) / 10)
+            if (Random.value < System.Math.Sqrt(Duration) / 1000)
             {
                 System.Random rnd = new System.Random();
                 GameObject planet = Instantiate(PlanetRock) as GameObject;

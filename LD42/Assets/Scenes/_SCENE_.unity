@@ -622,7 +622,7 @@ Prefab:
     - target: {fileID: 114874293934883946, guid: 1ed73af4add52c447b465db2c7257e1a,
         type: 2}
       propertyPath: PlanetMaterials.Array.size
-      value: 3
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 4848051451946444, guid: 1ed73af4add52c447b465db2c7257e1a, type: 2}
       propertyPath: m_LocalPosition.x
@@ -769,6 +769,36 @@ Prefab:
       propertyPath: pickup
       value: 
       objectReference: {fileID: 8300000, guid: f721eb2c057e3e94eaf7af637f187d04, type: 3}
+    - target: {fileID: 114874293934883946, guid: 1ed73af4add52c447b465db2c7257e1a,
+        type: 2}
+      propertyPath: PlanetMaterials.Array.data[3]
+      value: 
+      objectReference: {fileID: 2100000, guid: 6416e79d171f5dc4482452fa4cdb367c, type: 2}
+    - target: {fileID: 114874293934883946, guid: 1ed73af4add52c447b465db2c7257e1a,
+        type: 2}
+      propertyPath: PlanetMaterials.Array.data[4]
+      value: 
+      objectReference: {fileID: 2100000, guid: 754386171f5422240ae7b9763ea1618f, type: 2}
+    - target: {fileID: 114874293934883946, guid: 1ed73af4add52c447b465db2c7257e1a,
+        type: 2}
+      propertyPath: PlanetMaterials.Array.data[5]
+      value: 
+      objectReference: {fileID: 2100000, guid: cc8597884a9811a438c4cd6d191eddd1, type: 2}
+    - target: {fileID: 114874293934883946, guid: 1ed73af4add52c447b465db2c7257e1a,
+        type: 2}
+      propertyPath: PlanetMaterials.Array.data[6]
+      value: 
+      objectReference: {fileID: 2100000, guid: f2fabbafae3ce5d4e8a631d79e2a83c5, type: 2}
+    - target: {fileID: 114874293934883946, guid: 1ed73af4add52c447b465db2c7257e1a,
+        type: 2}
+      propertyPath: PlanetMaterials.Array.data[7]
+      value: 
+      objectReference: {fileID: 2100000, guid: 03ed4d2f20f3ba24f80f9e1abac2aa2e, type: 2}
+    - target: {fileID: 114874293934883946, guid: 1ed73af4add52c447b465db2c7257e1a,
+        type: 2}
+      propertyPath: PlanetMaterials.Array.data[8]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8dc2437e90bea7a488ee419af167ef8e, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1ed73af4add52c447b465db2c7257e1a, type: 2}
   m_IsPrefabParent: 0
@@ -1832,7 +1862,7 @@ ParticleSystem:
   moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -1423460126
+  randomSeed: -1036486897
   InitialModule:
     serializedVersion: 3
     enabled: 1

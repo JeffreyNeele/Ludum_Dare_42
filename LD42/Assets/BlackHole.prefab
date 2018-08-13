@@ -98,6 +98,8 @@ MonoBehaviour:
   spacerock: {fileID: 1209111238470120, guid: f14cbb3538e11a24089089c0e65bde72, type: 2}
   powerup: {fileID: 1306649079250326, guid: d3b2090393b34ee45b8f96e9f48d0bb9, type: 2}
   furthest: {fileID: 0}
+  PlayerObject: {fileID: 0}
+  Score: 0
   powerups: []
 --- !u!135 &135819520679644260
 SphereCollider:

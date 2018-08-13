@@ -21,6 +21,11 @@ public class Buttons : MonoBehaviour {
         SceneManager.LoadScene(sceneIndex);
     }
 
+    public void DeactivateButton()
+    {
+        gameObject.SetActive(false);
+    }
+
     public void ExitGame()
     {
 #if UNITY_EDITOR

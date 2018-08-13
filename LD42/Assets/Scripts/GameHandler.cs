@@ -13,6 +13,7 @@ public class GameHandler : MonoBehaviour {
     public GameObject PlanetRock;
     public Material[] PlanetMaterials;
     public GameObject bigmomma;
+    public GameObject Canvas;
 
     public float Score;
 
@@ -67,7 +68,7 @@ public class GameHandler : MonoBehaviour {
         {
             Score += Time.deltaTime;
         }
-        FindObjectOfType<Text>().text = "Score: " + Score.ToString("0.00");
+        Canvas.GetComponentInChildren<Text>().text = "Score: " + Score.ToString("0.00");
         
     }
 

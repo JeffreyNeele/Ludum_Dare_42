@@ -8,10 +8,13 @@ public class EartMovement : MonoBehaviour {
 
     public Transform target;
     public float speed;
-    private bool jumping;
+    private bool jumping, ghost;
     public bool alive;
     private int multikill;
     public Button againButton, exitButton;
+    public GameObject ghostParticles;
+
+    float GhostDuration;
 
 	// Use this for initialization
 	void Start ()
@@ -19,6 +22,7 @@ public class EartMovement : MonoBehaviour {
         jumping = false;
         alive = true;
         multikill = 1;
+        GhostDuration = 5;
 	}
 	
 	// Update is called once per frame
@@ -28,6 +32,17 @@ public class EartMovement : MonoBehaviour {
         {
             Vector3 position = gameObject.transform.position;
             float step = speed * Time.deltaTime;
+            if (ghost)
+            {
+                GhostDuration -= Time.deltaTime;
+                if (GhostDuration < 0)
+                {
+                    ghost = false;
+                    GhostDuration = 3;
+                    Destroy(transform.Find("Ghost(Clone)").gameObject);
+                }
+            }
+            
             if (jumping)
             {
                 transform.position = Vector3.MoveTowards(position, target.position, -step * 2f);
@@ -72,11 +87,28 @@ public class EartMovement : MonoBehaviour {
             Destroy(collision.gameObject);
             GameObject.Find("BlackHole").GetComponent<GameHandler>().SpawnPowerup();
             jumping = true;
+            GameObject.Find("BlackHole").GetComponent<GameHandler>().PlayPickup();
+        }
+
+        else if (collision.gameObject.name.Contains("Ghost"))
+        {
+            if (ghost)
+            {
+                Destroy(transform.Find("Ghost(Clone)").gameObject);
+            }
+            ghost = true;
+            Destroy(collision.gameObject);
+            GameObject.Find("BlackHole").GetComponent<GameHandler>().Score += 10;
+            GameObject shield = Instantiate(ghostParticles) as GameObject;
+            shield.transform.position = transform.position;
+            shield.transform.localScale = new Vector3(0.2f, 0.2f, 0.2f);
+            shield.transform.SetParent(transform);
+            GameObject.Find("BlackHole").GetComponent<GameHandler>().PlayPickup();
         }
 
         else if (collision.gameObject.name.Contains("Rock"))
         {
-            if(!jumping)
+            if(!jumping && !ghost)
             {
                 Destroy(gameObject);
                 alive = false;
@@ -89,6 +121,7 @@ public class EartMovement : MonoBehaviour {
                 multikill++;
                 GameObject.Find("BlackHole").GetComponent<GameHandler>().Score += 10 * (float)Math.Pow(1.5f, multikill);
             }
+            GameObject.Find("BlackHole").GetComponent<GameHandler>().PlayExplosion();
         }
     }
 }

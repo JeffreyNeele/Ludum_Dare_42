@@ -14,8 +14,13 @@ public class GameHandler : MonoBehaviour {
     public Material[] PlanetMaterials;
     public GameObject bigmomma;
     public GameObject Canvas;
+    public GameObject ghostMode;
 
-    public float Score;
+    public float Score, Duration;
+
+    public AudioClip[] explosionSFX;
+    public AudioClip pickup;
+    AudioSource SFX;
 
     public List<GameObject> powerups;
 
@@ -30,29 +35,49 @@ public class GameHandler : MonoBehaviour {
             Instantiate(powerup, new Vector3(0, 0, 8), Quaternion.identity),
             (furthest = Instantiate(powerup, new Vector3(0, 0, 9), Quaternion.identity))
         };
+        Duration = 0;
 
+        SFX = GetComponent<AudioSource>();
     }
 
     public void SpawnPowerup()
     {
         powerups.Add(furthest = Instantiate(powerup, new Vector3(0, 0, Vector3.Distance(Vector3.zero, furthest.transform.position) + 1f), Quaternion.identity));
     }
-	
-	// Update is called once per frame
-	void Update ()
+
+    public void PlayExplosion()
     {
+        System.Random rnd = new System.Random();
+        int i = rnd.Next(0, 9);
+        Debug.Log(i);
+        SFX.PlayOneShot(explosionSFX[i]);
+    }
+
+    public void PlayPickup()
+    {
+        SFX.PlayOneShot(pickup);
+    }
+
+    // Update is called once per frame
+    void Update ()
+    {
+        Duration += Time.deltaTime;
         if (Random.value < 0.05)
         {
-            if (Random.value < 0.02)
+            if (Random.value < System.Math.Sqrt(Duration) / 10)
             {
                 System.Random rnd = new System.Random();
                 GameObject planet = Instantiate(PlanetRock) as GameObject;
                 planet.AddComponent<SphereCollider>();
                 planet.AddComponent<SpaceRock>();
                 Renderer rend = planet.GetComponent<Renderer>();
-                rend.material = PlanetMaterials[rnd.Next(0, PlanetMaterials.Length - 1)];
-                float randomScale = Random.Range(0.2f, 1.2f);
+                rend.material = PlanetMaterials[rnd.Next(0, PlanetMaterials.Length)];
+                float randomScale = Random.Range(0.2f, 0.95f);
                 planet.transform.localScale = new Vector3(randomScale, randomScale, randomScale);
+            }
+            else if(Random.value < 0.01)
+            {
+                Instantiate(ghostMode);
             }
             else
             {

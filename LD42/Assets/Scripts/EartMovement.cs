@@ -11,7 +11,7 @@ public class EartMovement : MonoBehaviour {
     private bool jumping;
     public bool alive;
     private int multikill;
-    public Button againButton, exitButton;
+    public Button againButton, exitButton, yesButton;
 
 	// Use this for initialization
 	void Start ()
@@ -82,6 +82,7 @@ public class EartMovement : MonoBehaviour {
                 alive = false;
                 againButton.gameObject.SetActive(true);
                 exitButton.gameObject.SetActive(true);
+                yesButton.gameObject.SetActive(true);
             }
             else
             {

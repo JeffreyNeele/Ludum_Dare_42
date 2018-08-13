@@ -11,7 +11,7 @@ public class EartMovement : MonoBehaviour {
     private bool jumping, ghost;
     public bool alive;
     private int multikill;
-    public Button againButton, exitButton;
+    public Button againButton, exitButton, highscoreButton;
     public GameObject ghostParticles;
 
     float GhostDuration;
@@ -114,6 +114,7 @@ public class EartMovement : MonoBehaviour {
                 alive = false;
                 againButton.gameObject.SetActive(true);
                 exitButton.gameObject.SetActive(true);
+                highscoreButton.gameObject.SetActive(true);
             }
             else
             {
